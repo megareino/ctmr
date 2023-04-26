@@ -176,10 +176,12 @@ function calcular() {
    if(dizimo <= 0){ dizimo = primicias; }
    var ofminsoc = Math.ceil(parseFloat(((remuneracao-primicias-dizimo)* 0.02).toFixed(2)));
    if(ofminsoc < 0) ofminsoc=1;
-   var ofgrat = parseFloat((remuneracao * 0.001).toFixed(2));
-   var ofsem = parseFloat((remuneracao * 0.004).toFixed(2));
-   var ofisr = parseFloat((remuneracao * 0.01).toFixed(2));
-   var ofmis = parseFloat((remuneracao * 0.02).toFixed(2));
+   var ofgrat = Math.ceil(parseFloat(((remuneracao-primicias-dizimo-ofminsoc) * 0.001).toFixed(2)));
+   if(ofgrat < 2) ofgrat=2;
+   var ofsem = Math.ceil(parseFloat(((remuneracao-primicias-dizimo-ofminsoc-ofgrat) * 0.004).toFixed(2)));
+   if(ofsem < 0) ofsem=1;
+   var ofisr = Math.ceil(parseFloat((remuneracao * 0.01).toFixed(2)));
+   var ofmis = Math.ceil(parseFloat((remuneracao * 0.02).toFixed(2)));
   
    if(remuneracao > 0){
       document.getElementById("primicias").value = primicias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
