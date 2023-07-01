@@ -185,7 +185,7 @@ function calcular() {
    var ofmis = Math.ceil(parseFloat((remuneracao * 0.02).toFixed(2)));
   
    if(remuneracao > 0){
-      document.getElementById("primicias").value = primicias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+      document.getElementById("primicias").value = primicias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
       document.getElementById("dizimo").value = dizimo.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
       document.getElementById("ofminsoc").value = ofminsoc.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
       document.getElementById("ofgrat").value = ofgrat.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
