@@ -185,18 +185,18 @@ function calcular() {
    var ofmis = Math.ceil(parseFloat((remuneracao * 0.02).toFixed(2)));
   
    if(remuneracao > 0){
-      document.getElementById("primicias").value = primicias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
-      document.getElementById("dizimo").value = dizimo.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
-      document.getElementById("ofminsoc").value = ofminsoc.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
-      document.getElementById("ofgrat").value = ofgrat.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
-      document.getElementById("ofsem").value = ofsem.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
-      document.getElementById("ofisr").value = ofisr.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
-      document.getElementById("ofmis").value = ofmis.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
+      document.getElementById("primicias").value = primicias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
+      document.getElementById("dizimo").value = dizimo.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
+      document.getElementById("ofminsoc").value = ofminsoc.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
+      document.getElementById("ofgrat").value = ofgrat.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
+      document.getElementById("ofsem").value = ofsem.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
+      document.getElementById("ofisr").value = ofisr.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
+      document.getElementById("ofmis").value = ofmis.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
    }
 
    novaoferta = Math.ceil(novaoferta);
    var sum=primicias+dizimo+ofminsoc+ofgrat+ofsem+ofisr+ofmis+novaoferta;
-   document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
+   document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }
 
   document.getElementById("remuneracao").addEventListener("input", calcular);
