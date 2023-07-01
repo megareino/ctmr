@@ -171,7 +171,7 @@ function calcular() {
       return;
    }
    
-   var primicias = Math.ceil(parseFloat((remuneracao/30).toFixed(0)));
+   var primicias = Math.ceil(parseFloat((remuneracao/30).toFixed(2)));
    if(primicias < 1) primicias = 1;
    var dizimo = Math.ceil(parseFloat(((remuneracao - primicias) * 0.1).toFixed(2)));
    if(dizimo < 1){ dizimo = primicias; }
