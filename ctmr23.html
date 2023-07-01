@@ -186,16 +186,16 @@ function calcular() {
   
    if(remuneracao > 0){
       document.getElementById("primicias").value = primicias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
-      document.getElementById("dizimo").value = dizimo.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-      document.getElementById("ofminsoc").value = ofminsoc.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-      document.getElementById("ofgrat").value = ofgrat.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-      document.getElementById("ofsem").value = ofsem.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-      document.getElementById("ofisr").value = ofisr.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-      document.getElementById("ofmis").value = ofmis.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+      document.getElementById("dizimo").value = dizimo.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
+      document.getElementById("ofminsoc").value = ofminsoc.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
+      document.getElementById("ofgrat").value = ofgrat.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
+      document.getElementById("ofsem").value = ofsem.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
+      document.getElementById("ofisr").value = ofisr.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
+      document.getElementById("ofmis").value = ofmis.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
    }
 
    var sum=primicias+dizimo+ofminsoc+ofgrat+ofsem+ofisr+ofmis+novaoferta;
-   document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+   document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
 }
 
   document.getElementById("remuneracao").addEventListener("input", calcular);
