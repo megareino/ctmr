@@ -171,19 +171,21 @@ function calcular() {
       return;
    }
    
-   var primicias = Math.ceil(parseFloat((remuneracao/30).toFixed(2)));
-   if(primicias < 1) primicias = 1;
-   var dizimo = Math.ceil(parseFloat(((remuneracao - primicias) * 0.1).toFixed(2)));
-   if(dizimo < 1){ dizimo = primicias; }
-   var ofminsoc = Math.ceil(parseFloat(((remuneracao-primicias-dizimo)* 0.02).toFixed(2)));
-   if(ofminsoc < 1) ofminsoc=1;
-   var ofgrat = Math.ceil(parseFloat(((remuneracao-primicias-dizimo-ofminsoc) * 0.001).toFixed(2)));
-   if(ofgrat < 2.00) ofgrat=2.00;
-   var ofsem = Math.ceil(parseFloat(((remuneracao-primicias-dizimo-ofminsoc-ofgrat) * 0.004).toFixed(2)));
-   if(ofsem < 1) ofsem=1;
-   var ofisr = Math.ceil(parseFloat((remuneracao * 0.01).toFixed(2)));
-   var ofmis = Math.ceil(parseFloat((remuneracao * 0.02).toFixed(2)));
-  
+   var primicias = parseFloat((remuneracao/30).toFixed(2));
+   //if(primicias < 1) primicias = 1;
+   var dizimo = parseFloat(((remuneracao - primicias) * 0.1).toFixed(2));
+   if(dizimo < 0){ dizimo = 0; }
+   var ofminsoc = parseFloat(((remuneracao-primicias-dizimo)* 0.02).toFixed(2));
+   if(ofminsoc < 0) ofminsoc=0;
+   var ofgrat = parseFloat(((remuneracao-primicias-dizimo-ofminsoc) * 0.001).toFixed(2));
+   if(ofgrat < 2.00) ofgrat=0;
+   var ofsem = parseFloat(((remuneracao-primicias-dizimo-ofminsoc-ofgrat) * 0.004).toFixed(2));
+   if(ofsem < 0) ofsem=0;
+   var ofisr = parseFloat((remuneracao * 0.01).toFixed(2));
+   if(ofisr < 0) ofisr=0;
+   var ofmis = parseFloat((remuneracao * 0.02).toFixed(2));
+   if(ofmis < 0) ofmis=0;
+	
    if(remuneracao > 0){
       document.getElementById("primicias").value = primicias.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
       document.getElementById("dizimo").value = dizimo.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
@@ -194,7 +196,7 @@ function calcular() {
       document.getElementById("ofmis").value = ofmis.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
    }
 
-   var sum=primicias+dizimo+ofminsoc+ofgrat+ofsem+ofisr+ofmis+novaoferta;
+   var sum=Math.ceil(primicias+dizimo+ofminsoc+ofgrat+ofsem+ofisr+ofmis+novaoferta);
    document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }
 
