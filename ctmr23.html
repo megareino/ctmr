@@ -196,7 +196,7 @@ function calcular() {
 
    novaoferta = Math.ceil(novaoferta);
    var sum=primicias+dizimo+ofminsoc+ofgrat+ofsem+ofisr+ofmis+novaoferta;
-   document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
+   document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','').replace('.','');
 }
 
   document.getElementById("remuneracao").addEventListener("input", calcular);
