@@ -178,7 +178,7 @@ function calcular() {
    var ofminsoc = parseFloat(((remuneracao-primicias-dizimo)* 0.02).toFixed(2));
    if(ofminsoc < 0) ofminsoc=0;
    var ofgrat = parseFloat(((remuneracao-primicias-dizimo-ofminsoc) * 0.001).toFixed(2));
-   if(ofgrat < 2.00) ofgrat=0;
+   if(ofgrat < 0) ofgrat=0;
    var ofsem = parseFloat(((remuneracao-primicias-dizimo-ofminsoc-ofgrat) * 0.004).toFixed(2));
    if(ofsem < 0) ofsem=0;
    var ofisr = parseFloat((remuneracao * 0.01).toFixed(2));
