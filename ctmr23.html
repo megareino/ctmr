@@ -194,6 +194,7 @@ function calcular() {
       document.getElementById("ofmis").value = ofmis.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
    }
 
+   novaoferta = Math.ceil(novaoferta);
    var sum=primicias+dizimo+ofminsoc+ofgrat+ofsem+ofisr+ofmis+novaoferta;
    document.getElementById("totaloferta").value = sum.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}).replace(',00','');
 }
