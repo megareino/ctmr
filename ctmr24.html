@@ -129,7 +129,8 @@ function calcular() {
    if(parseFloat(aux1) > 0){
        remuneracao = parseFloat(aux1);
        document.getElementById("remuneracao").value = "";
-       document.getElementById("remuneracao").value = remuneracao.toLocaleString('pt-br', {minimumFractionDigits: 0})
+       document.getElementById("remuneracao").value = remuneracao;
+       //.toLocaleString('pt-br', {minimumFractionDigits: 0})
    }
    else{
       document.getElementById("remuneracao").value = "";
